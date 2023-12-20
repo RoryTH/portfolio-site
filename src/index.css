@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'geist';
+    src: url('/assets/fonts/GeistVariableVF.woff2') format('woff2'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+         url('assets/fonts/GeistVariableVF.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@keyframes bounce {
+    0%, 100%, 20%, 50%, 80% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .bounce-animation {
+    display: inline-block;
+    color: white;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+
+}
+
+html {
+    height: 100%;
+}
+
+body {
+height: 100%;
+margin: 0;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-image: url('/assets/images/background.png');
+background-color: #3a435a;
+background-repeat:no-repeat;
+background-size:cover; 
+color: white;
+font-family: geist, sans-serif;
+
+}
+
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        background: hsla(231, 13%, 30%, 0.1); 
+        backdrop-filter: blur(.7rem);
+    }
+}
+
+/* Optional: Style for non-collapsed state (larger screens) */
+@media (min-width: 992px) {
+    .navbar-nav {
+        background-color: transparent; /* or any other color for larger screens */
+        
+    }
+}
+
+
+#get-in-touch-btn {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.my-form {
+    border: 1px solid white;
+    border-radius: 2%;
+}
+
+::placeholder {
+    /* font-weight: bold; */
+    color: white !important;
+    opacity: .5 !important;
+  }
